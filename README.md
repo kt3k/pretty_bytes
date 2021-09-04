@@ -1,4 +1,4 @@
-# pretty_bytes v1.0.2
+# pretty_bytes v1.0.3
 
 [![ci](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml)
 
@@ -12,12 +12,12 @@ Note: This module was ported from
 # Usage
 
 ```ts
-import { prettyBytes } from "https://deno.land/x/pretty_bytes@v1.0.2/mod.ts";
+import { prettyBytes } from "https://deno.land/x/pretty_bytes@v1.0.3/mod.ts";
 
 prettyBytes(1337); // => 1.34 kB
 ```
 
-See [the API doc](https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v1.0.2%2Fmod.ts) for more details.
+See [the API doc](https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v1.0.3%2Fmod.ts) for more details.
 
 # License
 
