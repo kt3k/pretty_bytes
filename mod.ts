@@ -31,7 +31,10 @@ type PrettyBytesOptions = {
  * @param num The number to format
  * @param options The options
  */
-export function prettyBytes(num: number, options: PrettyBytesOptions = {}): string {
+export function prettyBytes(
+  num: number,
+  options: PrettyBytesOptions = {},
+): string {
   if (!Number.isFinite(num)) {
     throw new TypeError(`Expected a finite number, got ${typeof num}: ${num}`);
   }

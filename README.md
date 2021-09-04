@@ -4,7 +4,8 @@
 
 A utility for displaying file sizes for humans.
 
-Note: This module is ported from [pretty-bytes](https://github.com/sindresorhus/pretty-bytes) by Sindre Sorhus.
+Note: This module is ported from
+[pretty-bytes](https://github.com/sindresorhus/pretty-bytes) by Sindre Sorhus.
 
 # Usage
 
