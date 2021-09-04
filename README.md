@@ -1,4 +1,4 @@
-# pretty_bytes v0.1.0
+# pretty_bytes v1.0.0
 
 > Convert bytes to a human readable string: 1337 → 1.34 kB
 
@@ -10,7 +10,7 @@ Note: This module was ported from
 # Usage
 
 ```ts
-import { prettyBytes } from "https://deno.land/x/pretty_bytes@v0.1.0/mod.ts";
+import { prettyBytes } from "https://deno.land/x/pretty_bytes@v1.0.0/mod.ts";
 
 prettyBytes(1337); // => 1.34 kB
 ```
