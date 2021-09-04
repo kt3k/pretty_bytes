@@ -105,9 +105,6 @@ function toLocaleString(
   locale: boolean | string | string[] | undefined,
   options: LocaleOptions | undefined,
 ): string {
-  console.log("num", num);
-  console.log("locale", locale);
-  console.log("options", options);
   if (typeof locale === "string" || Array.isArray(locale)) {
     return num.toLocaleString(locale, options);
   } else if (locale === true || options !== undefined) {
