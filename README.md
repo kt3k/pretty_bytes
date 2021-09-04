@@ -14,7 +14,23 @@ Note: This module was ported from
 ```ts
 import { prettyBytes } from "https://deno.land/x/pretty_bytes@v1.0.3/mod.ts";
 
-prettyBytes(1337); // => 1.34 kB
+prettyBytes(1337);
+//=> '1.34 kB'
+
+prettyBytes(100);
+//=> '100 B'
+
+// Display with units of bits
+prettyBytes(1337, {bits: true});
+//=> '1.34 kbit'
+
+// Display file size differences
+prettyBytes(42, {signed: true});
+//=> '+42 B'
+
+// Localized output using German locale
+prettyBytes(1337, {locale: 'de'});
+//=> '1,34 kB'
 ```
 
 See [the API doc](https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v1.0.3%2Fmod.ts) for more details.
