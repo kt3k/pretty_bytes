@@ -16,7 +16,7 @@ type LocaleOptions = {
  * @property minimumFractionDigits The minimum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits.
  * @property maximumFractionDigits The maximum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits.
  */
-type PrettyBytesOptions = {
+export type PrettyBytesOptions = {
   bits?: boolean;
   binary?: boolean;
   locale?: boolean | string | string[];
