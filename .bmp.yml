@@ -1,4 +1,6 @@
 version: 0.1.0
 commit: 'chore: bump to v%.%.%'
 files:
-  README.md: v%.%.%
+  README.md:
+    - pretty_bytes v%.%.%
+    - https://deno.land/x/pretty_bytes@v%.%.%/mod.ts
