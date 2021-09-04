@@ -4,3 +4,4 @@ files:
   README.md:
     - pretty_bytes v%.%.%
     - 'https://deno.land/x/pretty_bytes@v%.%.%/mod.ts'
+    - 'https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v%.%.%%2Fmod.ts'
