@@ -8,22 +8,21 @@ type LocaleOptions = {
 
 /**
  * The options for pretty printing the byte numbers.
- *
- * @property bits Uses bits representation. Default is false.
- * @property binary Uses binary bytes (e.g. kibibyte). Default is false.
- * @property singed Include plus sign for positive numbers.
- * @property locale Uses localized number formatting. If it is set to true, uses default locale on the system. If it's set to string, uses that locale. The given string should be BCP 47 language tag (ref: https://en.wikipedia.org/wiki/IETF_language_tag). You can also give the list of language tags.
- * @property minimumFractionDigits The minimum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits.
- * @property maximumFractionDigits The maximum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits.
  */
-export type PrettyBytesOptions = {
+export interface PrettyBytesOptions {
+  /** Uses bits representation. Default is false. */
   bits?: boolean;
+  /** Uses binary bytes (e.g. kibibyte). Default is false. */
   binary?: boolean;
-  locale?: boolean | string | string[];
-  minimumFractionDigits?: number;
-  maximumFractionDigits?: number;
+  /** Include plus sign for positive numbers. */
   signed?: boolean;
-};
+  /** Uses localized number formatting. If it is set to true, uses default locale on the system. If it's set to string, uses that locale. The given string should be BCP 47 language tag (ref: https://en.wikipedia.org/wiki/IETF_language_tag). You can also give the list of language tags. */
+  locale?: boolean | string | string[];
+  /** The minimum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits. */
+  minimumFractionDigits?: number;
+  /** The maximum number of fraction digits to display. If neither minimumFractionDigits or maximumFractionDigits are set, the default behavior is to round to 3 significant digits. */
+  maximumFractionDigits?: number;
+}
 
 /**
  * Convert bytes to a human readable string: 1337 → 1.34 kB
