@@ -44,12 +44,8 @@ export function prettyBytes(
     return ` 0 ${UNITS_FIRSTLETTER[0]}`;
   }
 
-  const isNegative = num < 0;
-  const prefix = isNegative ? "-" : (options.signed ? "+" : "");
-
-  if (isNegative) {
-    num = -num;
-  }
+  const prefix = num < 0 ? "-" : (options.signed ? "+" : "");
+  num = Math.abs(num);
 
   const localeOptions = getLocaleOptions(options);
 
