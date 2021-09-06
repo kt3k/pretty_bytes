@@ -38,33 +38,27 @@ export function prettyBytes(
     throw new TypeError(`Expected a finite number, got ${typeof num}: ${num}`);
   }
 
-  const UNITS = options.bits
-    ? (options.binary ? BIBIT_UNITS : BIT_UNITS)
-    : (options.binary ? BIBYTE_UNITS : BYTE_UNITS);
+  const UNITS_FIRSTLETTER = (options.bits ? "b" : "B") + "kMGTPEZY";
 
   if (options.signed && num === 0) {
-    return ` 0 ${UNITS[0]}`;
+    return ` 0 ${UNITS_FIRSTLETTER[0]}`;
   }
 
-  const isNegative = num < 0;
-  const prefix = isNegative ? "-" : (options.signed ? "+" : "");
-
-  if (isNegative) {
-    num = -num;
-  }
+  const prefix = num < 0 ? "-" : (options.signed ? "+" : "");
+  num = Math.abs(num);
 
   const localeOptions = getLocaleOptions(options);
 
   if (num < 1) {
     const numberString = toLocaleString(num, options.locale, localeOptions);
-    return prefix + numberString + " " + UNITS[0];
+    return prefix + numberString + " " + UNITS_FIRSTLETTER[0];
   }
 
   const exponent = Math.min(
     Math.floor(
       options.binary ? Math.log(num) / Math.log(1024) : Math.log10(num) / 3,
     ),
-    UNITS.length - 1,
+    UNITS_FIRSTLETTER.length - 1,
   );
   num /= Math.pow(options.binary ? 1024 : 1000, exponent);
 
@@ -78,7 +72,12 @@ export function prettyBytes(
     localeOptions,
   );
 
-  const unit = UNITS[exponent];
+  let unit = UNITS_FIRSTLETTER[exponent];
+  if (exponent > 0) {
+    unit += options.binary ? "i" : "";
+    unit += options.bits ? "bit" : "B";
+  }
+
   return prefix + numberString + " " + unit;
 }
 
@@ -112,51 +111,3 @@ function toLocaleString(
 
   return num.toString();
 }
-
-const BYTE_UNITS = [
-  "B",
-  "kB",
-  "MB",
-  "GB",
-  "TB",
-  "PB",
-  "EB",
-  "ZB",
-  "YB",
-];
-
-const BIBYTE_UNITS = [
-  "B",
-  "kiB",
-  "MiB",
-  "GiB",
-  "TiB",
-  "PiB",
-  "EiB",
-  "ZiB",
-  "YiB",
-];
-
-const BIT_UNITS = [
-  "b",
-  "kbit",
-  "Mbit",
-  "Gbit",
-  "Tbit",
-  "Pbit",
-  "Ebit",
-  "Zbit",
-  "Ybit",
-];
-
-const BIBIT_UNITS = [
-  "b",
-  "kibit",
-  "Mibit",
-  "Gibit",
-  "Tibit",
-  "Pibit",
-  "Eibit",
-  "Zibit",
-  "Yibit",
-];
