@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: denoland/setup-deno@main
-      - run: |
+      - name: Run lint & test
+        run: |
           make fmt-check
           make lint
           make test
