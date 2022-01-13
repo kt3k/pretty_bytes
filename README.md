@@ -1,3 +1,9 @@
+# Deprecated
+
+This module is now merged to Deno's standard modules.
+
+Use https://deno.land/std/fmt/bytes.ts instead.
+
 # pretty_bytes v1.0.5
 
 [![ci](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml)
