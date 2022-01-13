@@ -4,7 +4,7 @@ This module is now merged to Deno's standard modules.
 
 Use https://deno.land/std/fmt/bytes.ts instead.
 
-# pretty_bytes v1.0.5
+# pretty_bytes v2.0.0
 
 [![ci](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/pretty_bytes/actions/workflows/ci.yml)
 
@@ -18,7 +18,7 @@ Note: This module was ported from
 # Usage
 
 ```ts
-import { prettyBytes } from "https://deno.land/x/pretty_bytes@v1.0.5/mod.ts";
+import { prettyBytes } from "https://deno.land/x/pretty_bytes@v2.0.0/mod.ts";
 
 prettyBytes(1337);
 //=> '1.34 kB'
@@ -40,7 +40,7 @@ prettyBytes(1337, { locale: "de" });
 ```
 
 See
-[the API doc](https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v1.0.5%2Fmod.ts)
+[the API doc](https://doc.deno.land/https/deno.land%2Fx%2Fpretty_bytes%40v2.0.0%2Fmod.ts)
 for more details.
 
 # License
